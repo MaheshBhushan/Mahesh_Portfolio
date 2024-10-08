@@ -1045,7 +1045,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  padding: 15px;
+  padding: 15px 15px 15px 0;
   color: #f4f6fd;
   font-size: 14px;
   position: fixed;
@@ -1054,23 +1054,33 @@ section {
   width: 300px;
   z-index: 9999;
   background: #040b14;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #footer .copyright {
   text-align: center;
+  width: 100%;
 }
 
 #footer .credits {
   padding-top: 5px;
   text-align: center;
-  font-size: 13px;
-  color: #eaebf0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#footer .credits a {
+  color: #149ddd;
 }
 
 @media (max-width: 1199px) {
   #footer {
     position: static;
-    width: auto;
-    padding-right: 20px 15px;
+    width: 100%;
+    padding: 15px;
   }
 }
