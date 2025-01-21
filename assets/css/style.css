@@ -140,6 +140,7 @@ a:hover {
   width: 90%;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 .nav-menu .nav-link {
@@ -1148,14 +1149,21 @@ video {
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav-toggle:hover {
   background-color: var(--navy);
+  transform: scale(1.05);
 }
 
 .mobile-nav-active {
   overflow: hidden;
+}
+
+.mobile-nav-active .mobile-nav-toggle {
+  right: 15px;
+  background-color: var(--deep-green);
 }
 
 /* Responsive Navigation */
@@ -1175,12 +1183,7 @@ video {
 
   #header.nav-active {
     left: 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .mobile-nav-active .mobile-nav-toggle {
-    right: 280px;
-    background-color: var(--deep-green);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 
   .section-title h2 {
@@ -1323,29 +1326,17 @@ video {
 @media (max-width: 576px) {
   #header {
     width: 100%;
-    height: auto;
+    height: 100vh;
     position: fixed;
     padding: 15px 10px;
     top: 0;
     left: -100%;
-    right: auto;
-    bottom: auto;
     transition: all 0.5s ease;
+    overflow-y: auto;
   }
 
   #header.nav-active {
     left: 0;
-    height: 100vh;
-    overflow-y: auto;
-  }
-
-  .mobile-nav-active .mobile-nav-toggle {
-    right: 15px;
-    position: fixed;
-  }
-
-  #main {
-    margin-top: 70px;
   }
 
   .nav-menu {
@@ -1365,6 +1356,15 @@ video {
   .nav-menu .nav-link i {
     font-size: 18px;
     margin-right: 8px;
+  }
+
+  .mobile-nav-toggle {
+    right: 15px;
+    top: 15px;
+  }
+
+  #main {
+    margin-top: 70px;
   }
 
   .profile {
