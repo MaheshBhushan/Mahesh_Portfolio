@@ -45,11 +45,11 @@ a:hover {
 
 .section-title {
   text-align: center;
-  padding: 30px 0;
+  padding: 27px 0;
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 29px;
   font-weight: 700;
   position: relative;
   margin-bottom: 20px;
@@ -73,27 +73,27 @@ a:hover {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 280px;
+  width: 252px;
   background: var(--navy);
   z-index: 9997;
   transition: var(--transition);
-  padding: 20px;
+  padding: 18px;
   overflow-y: auto;
 }
 
 .profile {
-  padding: 20px 0;
+  padding: 18px 0;
   text-align: center;
 }
 
 .profile img {
-  max-width: 120px;
-  border: 6px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 15px;
+  max-width: 108px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 13px;
 }
 
 .profile h1 {
-  font-size: 22px;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   font-weight: 600;
@@ -106,17 +106,17 @@ a:hover {
 }
 
 .profile .social-links {
-  margin-top: 15px;
+  margin-top: 13px;
 }
 
 .profile .social-links a {
-  font-size: 18px;
+  font-size: 16px;
   display: inline-block;
   color: var(--white);
   line-height: 1;
-  margin: 0 8px;
+  margin: 0 7px;
   transition: var(--transition);
-  padding: 8px;
+  padding: 7px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
 }
@@ -129,7 +129,7 @@ a:hover {
 
 /* Navigation Menu */
 .nav-menu {
-  padding: 20px 0;
+  padding: 18px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,11 +148,11 @@ a:hover {
   align-items: center;
   justify-content: flex-start;
   color: var(--light-gray);
-  padding: 12px 20px;
-  margin-bottom: 15px;
+  padding: 11px 18px;
+  margin-bottom: 13px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 15px;
-  border-radius: 12px;
+  font-size: 14px;
+  border-radius: 11px;
   background: rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
@@ -180,12 +180,12 @@ a:hover {
 }
 
 .nav-menu .nav-link i {
-  font-size: 22px;
-  margin-right: 12px;
+  font-size: 20px;
+  margin-right: 11px;
   color: var(--deep-green);
   transition: all 0.4s ease;
   flex-shrink: 0;
-  width: 24px;
+  width: 22px;
   text-align: center;
 }
 
@@ -255,15 +255,15 @@ a:hover {
 
 #hero h1 {
   margin: 0 0 10px 0;
-  font-size: 48px;
+  font-size: 43px;
   font-weight: 700;
   color: var(--white);
 }
 
 #hero p {
   color: var(--white);
-  margin-bottom: 50px;
-  font-size: 24px;
+  margin-bottom: 45px;
+  font-size: 22px;
 }
 
 #hero p span {
@@ -279,8 +279,8 @@ a:hover {
 
 /* About Section */
 .about .content h3 {
+  font-size: 23px;
   font-weight: 700;
-  font-size: 26px;
   color: var(--navy);
 }
 
@@ -328,8 +328,8 @@ a:hover {
   background: var(--white);
   border-radius: 15px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  margin: 30px 0;
+  padding: 27px;
+  margin: 27px 0;
   position: relative;
   width: 90%;
   transition: all 0.2s ease;
@@ -356,8 +356,8 @@ a:hover {
 }
 
 .timeline-dot {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   background: var(--deep-green);
   border-radius: 50%;
   position: absolute;
@@ -382,7 +382,7 @@ a:hover {
   background: var(--deep-green);
   color: var(--white);
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 15px;
 }
 
@@ -407,7 +407,7 @@ a:hover {
 .achievements h5 {
   color: var(--deep-green);
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .achievements ul {
@@ -496,13 +496,13 @@ a:hover {
 }
 
 .education-card h3 {
-  font-size: 24px;
+  font-size: 22px;
   margin-bottom: 10px;
   color: var(--navy);
 }
 
 .education-card h4 {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--deep-green);
   margin-bottom: 15px;
 }
@@ -628,7 +628,7 @@ a:hover {
 /* Skills Section */
 .skill-box {
   background: var(--white);
-  padding: 30px;
+  padding: 27px;
   border-radius: 15px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -645,12 +645,12 @@ a:hover {
 }
 
 .skill-box .skill-icon i {
-  font-size: 48px;
+  font-size: 43px;
   color: var(--deep-green);
 }
 
 .skill-box h3 {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 15px;
   color: var(--navy);
 }
@@ -667,7 +667,7 @@ a:hover {
   color: var(--navy);
   padding: 5px 15px;
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 13px;
   transition: var(--fast-transition);
 }
 
@@ -696,13 +696,13 @@ a:hover {
 
 .project-card img {
   width: 100%;
-  height: 250px;
+  height: 225px;
   object-fit: cover;
   transition: var(--fast-transition);
 }
 
 .project-info {
-  padding: 25px;
+  padding: 23px;
   position: relative;
   z-index: 2;
   display: flex;
@@ -711,7 +711,7 @@ a:hover {
 }
 
 .project-info h4 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 15px;
   color: var(--navy);
@@ -735,7 +735,7 @@ a:hover {
 }
 
 .project-info p {
-  font-size: 15px;
+  font-size: 14px;
   color: #666;
   margin-bottom: 20px;
   line-height: 1.6;
@@ -750,8 +750,8 @@ a:hover {
 }
 
 .tech-tag {
-  font-size: 12px;
-  padding: 4px 12px;
+  font-size: 11px;
+  padding: 4px 11px;
   border-radius: 15px;
   background: var(--light-gray);
   color: var(--navy);
@@ -773,9 +773,9 @@ a:hover {
   background: transparent;
   color: var(--navy);
   border: 2px solid var(--deep-green);
-  padding: 8px 25px;
+  padding: 7px 23px;
   border-radius: 25px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   transition: var(--fast-transition);
   display: flex;
@@ -784,7 +784,7 @@ a:hover {
 }
 
 .project-links .btn i {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .project-links .btn:hover {
@@ -998,18 +998,18 @@ video {
 
 /* Contact Section */
 .contact .info {
-  padding: 30px;
+  padding: 27px;
   background: var(--white);
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .contact .info i {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--deep-green);
   float: left;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   background: var(--light-gray);
   display: flex;
   justify-content: center;
@@ -1021,7 +1021,7 @@ video {
 
 .contact .info h4 {
   padding: 0 0 0 60px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 5px;
 }
@@ -1033,7 +1033,7 @@ video {
 }
 
 .contact .php-email-form {
-  padding: 30px;
+  padding: 27px;
   background: var(--white);
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
@@ -1047,8 +1047,8 @@ video {
 .contact .php-email-form textarea {
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 12px 15px;
-  font-size: 14px;
+  padding: 11px 14px;
+  font-size: 13px;
 }
 
 .contact .php-email-form input:focus,
@@ -1060,7 +1060,7 @@ video {
 .contact .php-email-form button[type="submit"] {
   background: var(--deep-green);
   border: 0;
-  padding: 10px 30px;
+  padding: 9px 27px;
   color: var(--white);
   border-radius: 5px;
   transition: var(--fast-transition);
@@ -1074,9 +1074,9 @@ video {
 #footer {
   background: var(--navy);
   color: var(--white);
-  font-size: 14px;
+  font-size: 13px;
   text-align: center;
-  padding: 30px 0;
+  padding: 27px 0;
   margin-top: auto;
   width: 100%;
   display: flex;
@@ -1109,14 +1109,14 @@ video {
   bottom: 15px;
   z-index: 996;
   background: var(--deep-green);
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   transition: var(--transition);
 }
 
 .back-to-top i {
-  font-size: 24px;
+  font-size: 22px;
   color: var(--white);
   line-height: 0;
 }
@@ -1137,13 +1137,13 @@ video {
   top: 20px;
   z-index: 9999;
   border: 0;
-  font-size: 24px;
+  font-size: 22px;
   transition: all 0.4s;
   outline: none !important;
   background-color: var(--deep-green);
   color: var(--white);
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: none;
   align-items: center;
   justify-content: center;
@@ -1169,8 +1169,7 @@ video {
 /* Responsive Navigation */
 @media (max-width: 1199px) {
   #header {
-    left: -280px;
-    transition: all 0.5s ease;
+    left: -252px;
   }
 
   #main {
@@ -1325,14 +1324,8 @@ video {
 
 @media (max-width: 576px) {
   #header {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    padding: 15px 10px;
-    top: 0;
-    left: -100%;
-    transition: all 0.5s ease;
-    overflow-y: auto;
+    width: 90%;
+    left: -90%;
   }
 
   #header.nav-active {
