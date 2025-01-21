@@ -1,953 +1,586 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-        <title>Portfolio</title>
-        <meta content="" name="description" />
-        <meta content="" name="keywords" />
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <!-- Favicons -->
-        <link href="assets/img/Mahesh_Logo.png" rel="icon" />
-        <link
-            href="assets/img/new-apple-touch-icon.png"
-            rel="apple-touch-icon"
-        />
+  <title>Mahesh Koduri Portfolio</title>
+  <meta content="Portfolio showcasing the skills of Mahesh Koduri as an AI Engineer, Data Scientist, and ML Engineer" name="description">
+  <meta content="AI Engineer, Data Scientist, ML Engineer, TensorFlow, Python, Data Analysis, Web Development, Cloud Computing" name="keywords">
 
-        <!-- Google Fonts -->
-        <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-            rel="stylesheet"
-        />
+  <!-- Favicon -->
+  <link href="assets/img/Mahesh_Logo (2).png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        <!-- Vendor CSS Files -->
-        <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-        <link
-            href="assets/vendor/bootstrap/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
-        <link
-            href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-            rel="stylesheet"
-        />
-        <link
-            href="assets/vendor/boxicons/css/boxicons.min.css"
-            rel="stylesheet"
-        />
-        <link
-            href="assets/vendor/glightbox/css/glightbox.min.css"
-            rel="stylesheet"
-        />
-        <link
-            href="assets/vendor/swiper/swiper-bundle.min.css"
-            rel="stylesheet"
-        />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        <!-- Template Main CSS File -->
-        <link href="assets/css/style.css" rel="stylesheet" />
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
 
-        <!-- Dark Mode Toggle -->
-        <link href="assets/css/dark-mode.css" rel="stylesheet" />
-        <script src="assets/js/dark-mode.js" defer></script>
-    </head>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
 
-    <body>
-        <!-- ======= Mobile nav toggle button ======= -->
-        <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <!-- Dark Mode CSS -->
+  <link href="assets/css/dark-mode.css" rel="stylesheet">
+</head>
 
-        <!-- ======= Header ======= -->
-        <header id="header">
-            <div class="d-flex flex-column">
-                <div class="profile">
-                    <img
-                        src="assets/img/profile.png"
-                        alt=""
-                        class="img-fluid rounded-circle"
-                        style="
-                            object-fit: cover;
-                            overflow: hidden;
-                            width: 150px;
-                            height: 150px;
-                        "
-                    />
-                    <h1 class="text-light">
-                        <a href="index.html">Mahesh Koduri</a>
-                    </h1>
-                    <div
-                        class="social-links mt-3 text-center"
-                        style="padding-bottom: initial"
-                    >
-                        <a href="#" class="twitter"
-                            ><i class="bx bxl-reddit"></i
-                        ></a>
-                        <a
-                            href="https://github.com/MaheshBhushan"
-                            class="facebook"
-                            ><i class="bx bxl-github"></i
-                        ></a>
-                        <a
-                            href="https://www.instagram.com/maheshnani2708/"
-                            class="instagram"
-                            ><i class="bx bxl-instagram"></i
-                        ></a>
-                        <a
-                            href="https://www.linkedin.com/in/mahesh-koduri-351101206/"
-                            class="linkedin"
-                            ><i class="bx bxl-linkedin"></i
-                        ></a>
-                    </div>
-                </div>
+<body>
+  <!-- Mobile nav toggle button -->
+  <button class="mobile-nav-toggle d-lg-none">
+    <i class="bx bx-menu"></i>
+  </button>
 
-                <nav id="navbar" class="nav-menu navbar">
-                    <ul>
-                        <li>
-                            <a href="#hero" class="nav-link scrollto active"
-                                ><i class="bx bx-home"></i> <span>Home</span></a
-                            >
-                        </li>
-                        <li>
-                            <a href="#about" class="nav-link scrollto"
-                                ><i class="bx bx-user"></i>
-                                <span>About</span></a
-                            >
-                        </li>
-                        <li>
-                            <a href="#resume" class="nav-link scrollto"
-                                ><i class="bx bx-file-blank"></i>
-                                <span>Resume</span></a
-                            >
-                        </li>
-                        <li>
-                            <a href="#skills" class="nav-link scrollto"
-                                ><i class="bx bx-code-block"></i>
-                                <span>Skills</span></a
-                            >
-                        </li>
-                        <li>
-                            <a href="#projects" class="nav-link scrollto"
-                                ><i class="bx bx-file-blank"></i>
-                                <span>Projects</span></a
-                            >
-                        </li>
-                        <li>
-                            <a href="#portfolio" class="nav-link scrollto"
-                                ><i class="bx bx-book-content"></i>
-                                <span>My Photography</span></a
-                            >
-                        </li>
-                        <li>
-                            <a href="#services" class="nav-link scrollto"
-                                ><i class="bx bx-server"></i>
-                                <span>Services</span></a
-                            >
-                        </li>
-                        <li>
-                            <a href="#contact" class="nav-link scrollto"
-                                ><i class="bx bx-envelope"></i>
-                                <span>Contact</span></a
-                            >
-                        </li>
-                    </ul>
-                </nav>
-                <!-- .nav-menu -->
+  <!-- Header -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+    <div class="container">
+      <div class="profile text-center">
+        <img src="assets/img/profile.png" alt="Mahesh Koduri" class="img-fluid rounded-circle mb-3">
+        <h1 class="text-light"><a href="index.html">Mahesh Koduri</a></h1>
+        <div class="social-links mt-3">
+          <a href="https://github.com/MaheshBhushan" class="github" target="_blank"><i class="bx bxl-github"></i></a>
+          <a href="https://www.instagram.com/maheshnani2708/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/mahesh-koduri-351101206/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="navbar nav-menu">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link scrollto active" href="#hero"><i class="bx bx-home"></i> <span>Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#about"><i class="bx bx-user"></i> <span>About</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#education"><i class="bx bx-book"></i> <span>Education</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#skills"><i class="bx bx-code-block"></i> <span>Skills</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#projects"><i class="bx bx-book-content"></i> <span>Projects</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#portfolio"><i class="bx bx-camera"></i> <span>Photography</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Mahesh Bhushan Chowdary Koduri</h1>
+      <p>I'm a <span class="typed" data-typed-items="Developer, Data Scientist, AI Engineer, ML Engineer"></span></p>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>About Me</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="assets/img/Mahesh-img.jpg" class="img-fluid rounded" alt="Mahesh Koduri">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0">
+            <h3>Data Scientist & AI Engineer</h3>
+            <p class="fst-italic">
+              A motivated and skilled data science enthusiast with expertise in machine learning, deep learning, web development, and cloud computing.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="list-unstyled">
+                  <li><i class="bx bx-chevron-right"></i> <strong>Birthday:</strong> <span>27 August 2003</span></li>
+                  <li><i class="bx bx-chevron-right"></i> <strong>Age:</strong> <span id="age"></span></li>
+                  <li><i class="bx bx-chevron-right"></i> <strong>Phone:</strong> <span>+91 9390XXXXXX</span></li>
+                  <li><i class="bx bx-chevron-right"></i> <strong>City:</strong> <span>Telangana, India</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul class="list-unstyled">
+                  <li><i class="bx bx-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Technology</span></li>
+                  <li><i class="bx bx-chevron-right"></i> <strong>Email:</strong> <span>mkoduri73@gmail.com</span></li>
+                </ul>
+              </div>
             </div>
-        </header>
-        <!-- End Header -->
+            <p class="mt-4">
+              I have a strong foundation in data science with hands-on experience in machine learning, deep learning, and data analysis. 
+              Passionate about solving real-world problems through data-driven insights, I continue to grow my expertise and actively 
+              seek opportunities to contribute meaningfully to the fields of data science and technology.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- ======= Hero Section ======= -->
-        <section
-            id="hero"
-            class="d-flex flex-column justify-content-center align-items-center"
-        >
-            <div class="hero-container" data-aos="fade-in">
-                <h1>Mahesh Bhushan Chowdary Koduri</h1>
-                <p>
-                    I'm
-                    <span
-                        class="typed"
-                        data-typed-items="Data Scientist, Data Analyst, Developer"
-                    ></span>
-                </p>
+    <!-- Education Section -->
+    <section id="education" class="education">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Education Journey</h2>
+          <p>My academic path and achievements</p>
+        </div>
+
+        <div class="timeline">
+          <div class="education-card" data-aos="fade-right">
+            <div class="education-content">
+              <div class="timeline-dot"></div>
+              <div class="row align-items-center">
+                <div class="col-lg-7 col-md-6">
+                  <span class="year">2020 - 2024</span>
+                  <h3>Bachelor of Technology</h3>
+                  <h4>St. Peters College of Engineering</h4>
+                  <div class="location">
+                    <i class="bx bx-map"></i>
+                    <span>Hyderabad, India</span>
+                  </div>
+                  <div class="grade">
+                    <i class="bx bx-star"></i>
+                    <span>CGPA: 7.97/10</span>
+                  </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                  <div class="college-memories">
+                    <div class="memory-circle" data-tooltip="College Tech Event" onclick="openSlideshow(0)">
+                      <img src="assets/img/college/memory1.png" alt="College Memory">
+                    </div>
+                    <div class="memory-circle" data-tooltip="Project Presentation" onclick="openSlideshow(1)">
+                      <img src="assets/img/college/memory2.jpg" alt="College Memory">
+                    </div>
+                    <div class="memory-circle" data-tooltip="Hackathon Win" onclick="openSlideshow(2)">
+                      <img src="assets/img/college/memory3.png" alt="College Memory">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
-        <!-- End Hero -->
+          </div>
 
-        <main id="main">
-            <!-- ======= About Section ======= -->
-            <section id="about" class="about">
-                <div class="container">
-                    <div class="section-title">
-                        <h2>About</h2>
-                        <p>
-                            I am a data science enthusiast with expertise in
-                            machine learning, deep learning, web development,
-                            and cloud computing. As a recent graduate with a
-                            bachelor's degree from St. Peter's Engineering
-                            College, I have gained experience in diverse
-                            projects like blockchain, cancer classification, and
-                            data analysis. I aim to pursue a master's degree in
-                            Data Science in Germany and eventually establish my
-                            own data analytics consultancy. I am proficient in
-                            C/C++, Java, Python, and JavaScript, and I am
-                            continually honing my skills to contribute to
-                            innovative solutions.
-                        </p>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-4" data-aos="fade-right">
-                            <img
-                                src="assets/img/Mahesh-img.jpg"
-                                class="img-fluid"
-                                alt=""
-                            />
-                        </div>
-                        <div
-                            class="col-lg-8 pt-4 pt-lg-0 content"
-                            data-aos="fade-left"
-                        >
-                            <h3>Data Scientist &amp; Web Developer.</h3>
-                            <p class="fst-italic">
-                                I have a strong foundation in data science, with
-                                hands-on experience in machine learning, deep
-                                learning, and data analysis, working on projects
-                                like breast cancer classification and diabetes
-                                prediction. I'm also skilled in web development,
-                                where I specialize in full-stack development,
-                                integrating back-end databases with front-end
-                                technologies. I use programming languages like
-                                Python, JavaScript, and Java to build scalable,
-                                data-driven solutions.
-                            </p>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <ul>
-                                        <li>
-                                            <i class="bi bi-chevron-right"></i>
-                                            <strong>Birthday:</strong>
-                                            <span>27 August 2003</span>
-                                        </li>
-                                        <li>
-                                            <i class="bi bi-chevron-right"></i>
-                                            <strong>Age:</strong>
-                                            <span id="age"></span>
-                                        </li>
-                                        <li>
-                                            <i class="bi bi-chevron-right"></i>
-                                            <strong>Phone:</strong>
-                                            <span>+91 9390XXXXXX</span>
-                                        </li>
-                                        <li>
-                                            <i class="bi bi-chevron-right"></i>
-                                            <strong>City:</strong>
-                                            <span
-                                                >Hyderabad, Telangana,
-                                                India</span
-                                            >
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <p>
-                                I am passionate about solving real-world
-                                problems through data-driven insights and
-                                innovative web solutions. As I continue to grow
-                                my expertise, I look forward to collaborating
-                                with industry professionals and pursuing
-                                opportunities that allow me to contribute
-                                meaningfully to the fields of data science and
-                                technology.
-                            </p>
-                        </div>
-                    </div>
+          <div class="education-card" data-aos="fade-left">
+            <div class="education-content">
+              <div class="timeline-dot"></div>
+              <div class="row align-items-center">
+                <div class="col-lg-8 col-md-7">
+                  <span class="year">2018 - 2020</span>
+                  <h3>Higher Secondary Education</h3>
+                  <h4>Narayana Junior College</h4>
+                  <div class="location">
+                    <i class="bx bx-map"></i>
+                    <span>Hyderabad, India</span>
+                  </div>
+                  <div class="grade">
+                    <i class="bx bx-star"></i>
+                    <span>Grade: 90.7%</span>
+                  </div>
                 </div>
-            </section>
-            <!-- End About Section -->
-
-            <!-- ======= Skills Section ======= -->
-            <section id="skills" class="skills section-bg">
-                <div class="container">
-                    <div class="section-title">
-                        <h2>Skills</h2>
-                        <p>
-                            Proficient in programming languages including
-                            Python, Java, C/C++, JavaScript, and SQL, with
-                            hands-on experience in machine learning, data
-                            analysis, web development, and cloud computing.
-                            Skilled in using frameworks and tools like
-                            TensorFlow, Keras, React, and AWS for building
-                            scalable, data-driven applications.
-                        </p>
-                    </div>
-
-                    <div class="row skills-content">
-                        <div class="col-lg-6" data-aos="fade-up">
-                            <div class="progress">
-                                <span class="skill"
-                                    >HTML <i class="val"></i
-                                ></span>
-                                <div class="progress-bar-wrap">
-                                    <div
-                                        class="progress-bar"
-                                        role="progressbar"
-                                        aria-valuenow="100"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill"
-                                    >CSS <i class="val"></i
-                                ></span>
-                                <div class="progress-bar-wrap">
-                                    <div
-                                        class="progress-bar"
-                                        role="progressbar"
-                                        aria-valuenow="90"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill"
-                                    >JavaScript <i class="val"></i
-                                ></span>
-                                <div class="progress-bar-wrap">
-                                    <div
-                                        class="progress-bar"
-                                        role="progressbar"
-                                        aria-valuenow="75"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                </div>
-                            </div>
-                            <div class="progress">
-                                <span class="skill"
-                                    >Java <i class="val"></i
-                                ></span>
-                                <div class="progress-bar-wrap">
-                                    <div
-                                        class="progress-bar"
-                                        role="progressbar"
-                                        aria-valuenow="50"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="col-lg-6"
-                            data-aos="fade-up"
-                            data-aos-delay="100"
-                        >
-                            <div class="progress">
-                                <span class="skill"
-                                    >MYSQL <i class="val"></i
-                                ></span>
-                                <div class="progress-bar-wrap">
-                                    <div
-                                        class="progress-bar"
-                                        role="progressbar"
-                                        aria-valuenow="80"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill"
-                                    >Python <i class="val"></i
-                                ></span>
-                                <div class="progress-bar-wrap">
-                                    <div
-                                        class="progress-bar"
-                                        role="progressbar"
-                                        aria-valuenow="90"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill"
-                                    >Data analysis <i class="val"></i
-                                ></span>
-                                <div class="progress-bar-wrap">
-                                    <div
-                                        class="progress-bar"
-                                        role="progressbar"
-                                        aria-valuenow="75"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                </div>
-                            </div>
-                            <div class="progress">
-                                <span class="skill"
-                                    >Machine learning <i class="val"></i
-                                ></span>
-                                <div class="progress-bar-wrap">
-                                    <div
-                                        class="progress-bar"
-                                        role="progressbar"
-                                        aria-valuenow="90"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-4 col-md-5">
+                  <div class="college-icon">
+                    <img src="assets/img/college_bg.png" alt="Junior College Icon">
+                  </div>
                 </div>
-            </section>
-            <!-- End Skills Section -->
+              </div>
+            </div>
+          </div>
 
-            <!-- ======= Resume Section ======= -->
-            <section id="resume" class="resume">
-                <div class="container">
-                    <div class="section-title">
-                        <h2>Resume</h2>
-                        <p>
-                            A motivated and skilled data scientist with a solid
-                            technical basis and hands-on experience in machine
-                            learning, web development, and cloud computing. I am
-                            excited to use my expertise and talents to help with
-                            creative initiatives and solutions in the technology
-                            business.
-                        </p>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-6" data-aos="fade-up">
-                            <h3 class="resume-title">Summary</h3>
-                            <div class="resume-item pb-0">
-                                <h4>Mahesh Bhushan Chowdary Koduri</h4>
-                                <p>
-                                    <em>
-                                        Aspiring to gain advanced knowledge in
-                                        Data Science through a Master's, while
-                                        collaborating on research and leveraging
-                                        my skills in machine learning, data
-                                        analysis, web development, and cloud
-                                        computing for innovative solutions.</em
-                                    >
-                                </p>
-                                <ul>
-                                    <li>Hyderabad, Telangana, India</li>
-                                    <li>(+91)9390284554</li>
-                                    <li>mkoduri73@gmail.com</li>
-                                </ul>
-                            </div>
-
-                            <h3 class="resume-title">Education</h3>
-                            <div class="resume-item">
-                                <h4>Bachelor of Technology</h4>
-                                <h5>2020 - 2024</h5>
-                                <p>
-                                    <em
-                                        >St. Peter's Engineering College,
-                                        Hyderabad, Telangana</em
-                                    >
-                                </p>
-                                <p>
-                                    I hold a Bachelor's degree in Engineering
-                                    with a focus on Computer Science, where I
-                                    developed strong foundations in data science
-                                    and web development, and achieved accolades
-                                    in hackathons and technical fests.
-                                </p>
-                            </div>
-                        </div>
-                        <div
-                            class="col-lg-6"
-                            data-aos="fade-up"
-                            data-aos-delay="100"
-                        >
-                            <h3 class="resume-title">
-                                Professional Experience
-                            </h3>
-                            <div class="resume-item">
-                                <h4>Junior Software Engineer Intern</h4>
-                                <h5>Jan 2024 - May 2024</h5>
-                                <p><em>Hyderabad, Telangana, India </em></p>
-                                <ul>
-                                    <li>
-                                        Contributed to developing an
-                                        automotive-specific operating system
-                                        through coding and debugging, enhancing
-                                        system stability.
-                                    </li>
-                                    <li>
-                                        Actively participated in discussions to
-                                        address system challenges and solutions.
-                                    </li>
-                                    <li>
-                                        Led a cross-functional team to improve
-                                        system usability, significantly
-                                        enhancing the user experience.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+          <div class="education-card" data-aos="fade-right">
+            <div class="education-content">
+              <div class="timeline-dot"></div>
+              <div class="row align-items-center">
+                <div class="col-lg-8 col-md-7">
+                  <span class="year">2006 - 2018</span>
+                  <h3>Secondary School Education</h3>
+                  <h4>Narayana High School</h4>
+                  <div class="location">
+                    <i class="bx bx-map"></i>
+                    <span>Hyderabad, India</span>
+                  </div>
+                  <div class="grade">
+                    <i class="bx bx-star"></i>
+                    <span>Grade: 9.8/10</span>
+                  </div>
                 </div>
-            </section>
-            <!-- End Resume Section -->
-
-            <!-- ======= Projects Section ======= -->
-            <section id="projects" class="projects">
-                <div class="container">
-                    <div class="section-title">
-                        <h2>Projects</h2>
-                        <p>
-                            Here are some of my notable projects that showcase
-                            my skills in machine learning, web development, and
-                            data science.
-                        </p>
-                    </div>
-
-                    <div class="row">
-                        <div
-                            class="col-lg-6 col-md-6 d-flex align-items-stretch"
-                        >
-                            <div class="project-box">
-                                <div class="project-icon">
-                                    <i class="bx bx-brain"></i>
-                                </div>
-                                <h4>
-                                    <a href="">Breast Cancer Classification</a>
-                                </h4>
-                                <p>
-                                    Developed a machine learning model using
-                                    Python and scikit-learn to classify breast
-                                    cancer tumors as benign or malignant with
-                                    96% accuracy.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="col-lg-6 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
-                        >
-                            <div class="project-box">
-                                <div class="project-icon">
-                                    <i class="bx bx-cube"></i>
-                                </div>
-                                <h4>
-                                    <a href=""
-                                        >Multi-Agent AI System for Building
-                                        Resume</a
-                                    >
-                                </h4>
-                                <p>
-                                    Developed an intelligent resume builder
-                                    using multiple AI agents that collaborate to
-                                    create, format, and optimize professional
-                                    resumes based on user input and industry
-                                    standards.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="col-lg-6 col-md-6 d-flex align-items-stretch mt-4"
-                        >
-                            <div class="project-box">
-                                <div class="project-icon">
-                                    <i class="bx bx-data"></i>
-                                </div>
-                                <h4>
-                                    <a href="">Diabetes Prediction System</a>
-                                </h4>
-                                <p>
-                                    Built a web-based diabetes prediction system
-                                    using machine learning algorithms and Flask
-                                    framework.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="col-lg-6 col-md-6 d-flex align-items-stretch mt-4"
-                        >
-                            <div class="project-box">
-                                <div class="project-icon">
-                                    <i class="bx bx-camera"></i>
-                                </div>
-                                <h4>
-                                    <a href="">Personal Portfolio Website</a>
-                                </h4>
-                                <p>
-                                    Designed and developed a responsive
-                                    portfolio website using HTML, CSS,
-                                    JavaScript, and PHP.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-4 col-md-5">
+                  <div class="college-icon">
+                    <img src="assets/img/school_bg.png" alt="School Icon">
+                  </div>
                 </div>
-            </section>
-            <!-- End Projects Section -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <!-- ======= Portfolio Section ======= -->
-            <section id="portfolio" class="portfolio section-bg">
-                <div class="container">
-                    <div class="section-title">
-                        <h2>My Photography</h2>
-                        <p>
-                            I've loved snapping photos of nature since I was a
-                            kid, and I use my awesome phone to capture some
-                            pretty amazing shots as a fun hobby!
-                        </p>
-                    </div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>My technical expertise and competencies</p>
+        </div>
 
-                    <div
-                        class="row portfolio-container"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                    >
-                        <div
-                            class="col-lg-4 col-md-6 portfolio-item filter-app"
-                        >
-                            <div class="portfolio-wrap">
-                                <img
-                                    src="assets/img/Nature_shot1.jpg"
-                                    class="img-fluid"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="skill-box" data-aos="zoom-in">
+              <div class="skill-icon">
+                <i class="bx bxl-python"></i>
+              </div>
+              <h3>Core Skills</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Data Structures</span>
+                <span class="skill-tag">Algorithms</span>
+                <span class="skill-tag">Problem Solving</span>
+              </div>
+            </div>
+          </div>
 
-                        <div
-                            class="col-lg-4 col-md-6 portfolio-item filter-web"
-                        >
-                            <div class="portfolio-wrap">
-                                <img
-                                    src="assets/img/Nature_shot2.jpg"
-                                    class="img-fluid"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="skill-box" data-aos="zoom-in" data-aos-delay="100">
+              <div class="skill-icon">
+                <i class="bx bx-brain"></i>
+              </div>
+              <h3>AI & ML</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Deep Learning</span>
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">Neural Networks</span>
+              </div>
+            </div>
+          </div>
 
-                        <div
-                            class="col-lg-4 col-md-6 portfolio-item filter-app"
-                        >
-                            <div class="portfolio-wrap">
-                                <img
-                                    src="assets/img/Nature_shot3.jpg"
-                                    class="img-fluid"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="skill-box" data-aos="zoom-in" data-aos-delay="200">
+              <div class="skill-icon">
+                <i class="bx bx-data"></i>
+              </div>
+              <h3>Data Science</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">Statistical Analysis</span>
+                <span class="skill-tag">SQL</span>
+              </div>
+            </div>
+          </div>
 
-                        <div
-                            class="col-lg-4 col-md-6 portfolio-item filter-card"
-                        >
-                            <div class="portfolio-wrap">
-                                <img
-                                    src="assets/img/Nature_shot4.jpg"
-                                    class="img-fluid"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="skill-box" data-aos="zoom-in" data-aos-delay="300">
+              <div class="skill-icon">
+                <i class="bx bx-code-alt"></i>
+              </div>
+              <h3>Web Development</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+              </div>
+            </div>
+          </div>
 
-                        <div
-                            class="col-lg-4 col-md-6 portfolio-item filter-web"
-                        >
-                            <div class="portfolio-wrap">
-                                <img
-                                    src="assets/img/Nature_shot5.jpg"
-                                    class="img-fluid"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="skill-box" data-aos="zoom-in" data-aos-delay="400">
+              <div class="skill-icon">
+                <i class="bx bx-cloud"></i>
+              </div>
+              <h3>Cloud & DevOps</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">CI/CD</span>
+              </div>
+            </div>
+          </div>
 
-                        <div
-                            class="col-lg-4 col-md-6 portfolio-item filter-app"
-                        >
-                            <div class="portfolio-wrap">
-                                <img
-                                    src="assets/img/Nature_shot6.jpg"
-                                    class="img-fluid"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
-                    </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="skill-box" data-aos="zoom-in" data-aos-delay="500">
+              <div class="skill-icon">
+                <i class="bx bx-bulb"></i>
+              </div>
+              <h3>Soft Skills</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Team Work</span>
+                <span class="skill-tag">Communication</span>
+                <span class="skill-tag">Leadership</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Featured projects showcasing my expertise in AI, Machine Learning, and Data Science</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="project-card">
+              <img src="assets/img/project5.jpg" class="img-fluid" alt="Breast Cancer Classification">
+              <div class="project-info">
+                <h4>Breast Cancer Classification</h4>
+                <p>Advanced machine learning model for early breast cancer detection using medical imaging data and deep learning techniques.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">TensorFlow</span>
+                  <span class="tech-tag">Deep Learning</span>
+                  <span class="tech-tag">CNN</span>
                 </div>
-            </section>
-            <!-- End Portfolio Section -->
-
-            <!-- ======= Services Section ======= -->
-            <section id="services" class="services">
-                <div class="container">
-                    <div class="section-title">
-                        <h2>Services</h2>
-                        <p>
-                            Since childhood, I’ve always been curious and eager
-                            to learn new things. This passion carried over into
-                            my B.Tech, where I explored various domains and
-                            discovered my expertise in providing the following
-                            services.
-                        </p>
-                    </div>
-
-                    <div class="row">
-                        <div
-                            class="col-lg-4 col-md-6 icon-box"
-                            data-aos="fade-up"
-                        >
-                            <div class="icon">
-                                <i class="bi bi-bar-chart"></i>
-                            </div>
-                            <h4 class="title"><a href="">Data Analysis</a></h4>
-                            <p class="description">
-                                Leveraging statistical techniques and tools to
-                                extract insights from data and support
-                                decision-making processes.
-                            </p>
-                        </div>
-                        <div
-                            class="col-lg-4 col-md-6 icon-box"
-                            data-aos="fade-up"
-                            data-aos-delay="100"
-                        >
-                            <div class="icon"><i class="bi bi-award"></i></div>
-                            <h4 class="title">
-                                <a href="">Machine Learning Solutions</a>
-                            </h4>
-                            <p class="description">
-                                Developing and deploying machine learning models
-                                to solve complex problems and enhance predictive
-                                capabilities.
-                            </p>
-                        </div>
-                        <div
-                            class="col-lg-4 col-md-6 icon-box"
-                            data-aos="fade-up"
-                            data-aos-delay="200"
-                        >
-                            <div class="icon">
-                                <i class="bi bi-code-slash"></i>
-                            </div>
-                            <h4 class="title">
-                                <a href="">Web Development</a>
-                            </h4>
-                            <p class="description">
-                                Creating responsive and user-friendly websites
-                                and applications, focusing on front-end and
-                                back-end development.
-                            </p>
-                        </div>
-                        <div
-                            class="col-lg-4 col-md-6 icon-box"
-                            data-aos="fade-up"
-                            data-aos-delay="300"
-                        >
-                            <div class="icon">
-                                <i class="bi bi-lightbulb"></i>
-                            </div>
-                            <h4 class="title">
-                                <a href="">Research and Development</a>
-                            </h4>
-                            <p class="description">
-                                Conducting research on emerging technologies and
-                                trends in data science and web development to
-                                drive innovation.
-                            </p>
-                        </div>
-                        <div
-                            class="col-lg-4 col-md-6 icon-box"
-                            data-aos="fade-up"
-                            data-aos-delay="400"
-                        >
-                            <div class="icon">
-                                <i class="bi bi-chat-quote"></i>
-                            </div>
-                            <h4 class="title">
-                                <a href="">Prompt Engineering</a>
-                            </h4>
-                            <p class="description">
-                                Prompt Engineering: Crafting effective prompts
-                                to optimize interactions with AI models,
-                                enhancing their performance and output quality.
-                            </p>
-                        </div>
-                        <div
-                            class="col-lg-4 col-md-6 icon-box"
-                            data-aos="fade-up"
-                            data-aos-delay="500"
-                        >
-                            <div class="icon">
-                                <i class="bi bi-briefcase"></i>
-                            </div>
-                            <h4 class="title">
-                                <a href="">Consulting Services</a>
-                            </h4>
-                            <p class="description">
-                                Offering expert advice and guidance on
-                                data-driven strategies and technology
-                                implementations to improve business outcomes.
-                            </p>
-                        </div>
-                    </div>
+                <div class="project-links">
+                  <a href="https://github.com/MaheshBhushan/Breast-Cancer-Classification-Using-Deep-Learning" class="btn"><i class="bx bxl-github"></i> Source Code</a>
                 </div>
-            </section>
-            <!-- End Services Section -->
+              </div>
+            </div>
+          </div>
 
-            <!-- ======= Contact Section ======= -->
-            <section id="contact" class="contact">
-                <div class="container">
-                    <div class="section-title">
-                        <h2>Contact</h2>
-                        <p>Feel free to contact me here:</p>
-                    </div>
-
-                    <div class="row" data-aos="fade-in">
-                        <div class="col-lg-5">
-                            <div class="info">
-                                <div class="address">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <h4>Location:</h4>
-                                    <p>Hyderabad, Telangana, India</p>
-                                </div>
-
-                                <div class="email">
-                                    <i class="bi bi-envelope"></i>
-                                    <h4>Email:</h4>
-                                    <p>mkoduri73@gmail.com</p>
-                                </div>
-
-                                <div class="phone">
-                                    <i class="bi bi-phone"></i>
-                                    <h4>Call:</h4>
-                                    <p>+91 7993 339 399</p>
-                                </div>
-                            </div>
-
-                            <div class="map-container">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.31698198563!2d78.24323135!3d17.4123487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1650987345678!5m2!1sen!2sin"
-                                    style="border: 0"
-                                    allowfullscreen=""
-                                    loading="lazy"
-                                ></iframe>
-                            </div>
-                        </div>
-                        <div
-                            class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch"
-                        >
-                            <form
-                                action="forms/contact.php"
-                                method="POST"
-                                role="form"
-                                class="php-email-form"
-                            >
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label for="name">Your Name</label>
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            class="form-control"
-                                            id="name"
-                                            required
-                                        />
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="email">Your Email</label>
-                                        <input
-                                            type="email"
-                                            class="form-control"
-                                            name="email"
-                                            id="email"
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="subject">Subject</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        name="subject"
-                                        id="subject"
-                                        required
-                                    />
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Message</label>
-                                    <textarea
-                                        class="form-control"
-                                        name="message"
-                                        rows="10"
-                                        required
-                                    ></textarea>
-                                </div>
-                                <div class="my-3">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">
-                                        Your message has been sent. Thank you!
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit">Send Message</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="project-card">
+              <img src="assets/img/Project4.png" class="img-fluid" alt="Multi-Agent AI System">
+              <div class="project-info">
+                <h4>Multi-Agent AI System</h4>
+                <p>Intelligent multi-agent system designed for complex problem-solving and decision-making in dynamic environments.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Reinforcement Learning</span>
+                  <span class="tech-tag">PyTorch</span>
+                  <span class="tech-tag">Multi-Agent Systems</span>
                 </div>
-            </section>
-            <!-- End Contact Section -->
-        </main>
-        <!-- End #main -->
+                <div class="project-links">
+                  <a href="https://github.com/MaheshBhushan/Resume_Builder_AI" class="btn"><i class="bx bxl-github"></i> Source Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <a
-            href="#"
-            class="back-to-top d-flex align-items-center justify-content-center"
-            ><i class="bi bi-arrow-up-short"></i
-        ></a>
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="project-card">
+              <img src="assets/img/project2.jpg" class="img-fluid" alt="Diabetes Prediction">
+              <div class="project-info">
+                <h4>Diabetes Prediction</h4>
+                <p>Machine learning model for early diabetes prediction using patient health data and advanced analytics techniques.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Scikit-learn</span>
+                  <span class="tech-tag">Data Analysis</span>
+                  <span class="tech-tag">ML</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/MaheshBhushan/Diabetic-Prediction-Model" class="btn"><i class="bx bxl-github"></i> Source Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Vendor JS Files -->
-        <script src="assets/vendor/aos/aos.js"></script>
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-        <script src="assets/vendor/php-email-form/validate.js"></script>
-        <script src="assets/vendor/purecounter/purecounter.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="assets/vendor/typed.js/typed.min.js"></script>
-        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <!-- Photography Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Photography</h2>
+          <p>A collection of my nature photography showcasing the beauty of our world</p>
+        </div>
 
-        <!-- Template Main JS File -->
-        <script src="assets/js/main.js"></script>
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Nature_shot1.jpg" class="static-img" alt="Nature Photography">
+              <img src="assets/img/gifs/vid1.gif" class="gif-img" alt="Nature GIF">
+              <audio class="hover-audio" preload="auto">
+                <source src="assets/audio/vid1.mp3" type="audio/mp3">
+              </audio>
+            </div>
+          </div>
 
-        <!-- EmailJS -->
-        <script
-            type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-        ></script>
-        <script type="text/javascript">
-            (function () {
-                emailjs.init("695Bsdo-molJqEIxA");
-            })();
-        </script>
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Nature_shot2.jpg" class="static-img" alt="Nature Photography">
+              <img src="assets/img/gifs/vid2.gif" class="gif-img" alt="Nature GIF">
+              <audio class="hover-audio" preload="auto">
+                <source src="assets/audio/vid2.mp3" type="audio/mp3">
+              </audio>
+            </div>
+          </div>
 
-        <script src="assets/js/contact.js"></script>
-    </body>
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Nature_shot3.jpg" class="static-img" alt="Nature Photography">
+              <img src="assets/img/gifs/vid3.gif" class="gif-img" alt="Nature GIF">
+              <audio class="hover-audio" preload="auto">
+                <source src="assets/audio/vid3.mp3" type="audio/mp3">
+              </audio>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Nature_shot4.jpg" class="static-img" alt="Nature Photography">
+              <img src="assets/img/gifs/vid4.gif" class="gif-img" alt="Nature GIF">
+              <audio class="hover-audio" preload="auto">
+                <source src="assets/audio/vid4.mp3" type="audio/mp3">
+              </audio>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Nature_shot5.jpg" class="static-img" alt="Nature Photography">
+              <img src="assets/img/gifs/vid5.gif" class="gif-img" alt="Nature GIF">
+              <audio class="hover-audio" preload="auto">
+                <source src="assets/audio/vid5.mp3" type="audio/mp3">
+              </audio>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Nature_shot6.jpg" class="static-img" alt="Nature Photography">
+              <img src="assets/img/gifs/vid6.gif" class="gif-img" alt="Nature GIF">
+              <audio class="hover-audio" preload="auto">
+                <source src="assets/audio/vid6.mp3" type="audio/mp3">
+              </audio>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Get in touch with me</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="info">
+              <div class="address">
+                <i class="bx bx-map"></i>
+                <h4>Location:</h4>
+                <p>Hyderabad, Telangana, India</p>
+              </div>
+
+              <div class="email">
+                <i class="bx bx-envelope"></i>
+                <h4>Email:</h4>
+                <p>mkoduri73@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bx bx-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 9390XXXXXX</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0">
+            <form action="forms/contact.php" method="POST" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center">
+                <button type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; 2025 <strong><span>Mahesh Koduri</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <!-- College Memories Slideshow Modal -->
+  <div class="modal fade" id="memoriesModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="memories-slideshow">
+            <div class="memories-slide">
+              <img src="assets/img/college/memory1.png" alt="College Tech Event" class="img-fluid">
+            </div>
+            <div class="memories-slide">
+              <img src="assets/img/college/memory2.jpg" alt="Project Presentation" class="img-fluid">
+            </div>
+            <div class="memories-slide">
+              <img src="assets/img/college/memory3.png" alt="Hackathon Win" class="img-fluid">
+            </div>
+            <button class="slideshow-nav prev" onclick="changeSlide(-1)">
+              <i class="bx bx-chevron-left"></i>
+            </button>
+            <button class="slideshow-nav next" onclick="changeSlide(1)">
+              <i class="bx bx-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bx bx-up-arrow-alt"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+</body>
+
 </html>

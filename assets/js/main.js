@@ -1,8 +1,6 @@
 /**
- * Template Name: iPortfolio - v3.3.0
- * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
- * Author: BootstrapMade.com
- * License: https://bootstrapmade.com/license/
+ * Template Name: Mahesh Portfolio - v1.0.0
+ * Author: Mahesh Koduri
  */
 (function () {
   "use strict";
@@ -41,126 +39,81 @@
   };
 
   /**
-   * Navbar links active state on scroll
+   * Mobile nav toggle
    */
-  let navbarlinks = select("#navbar .scrollto", true);
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200;
-    navbarlinks.forEach((navbarlink) => {
-      if (!navbarlink.hash) return;
-      let section = select(navbarlink.hash);
-      if (!section) return;
-      if (
-        position >= section.offsetTop &&
-        position <= section.offsetTop + section.offsetHeight
-      ) {
-        navbarlink.classList.add("active");
-      } else {
-        navbarlink.classList.remove("active");
-      }
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const header = document.getElementById('header');
+  const body = document.querySelector('body');
+
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', function(e) {
+      header.classList.toggle('nav-active');
+      mobileNavToggle.classList.toggle('bi-x');
+      body.classList.toggle('mobile-nav-active');
     });
-  };
-  window.addEventListener("load", navbarlinksActive);
-  onscroll(document, navbarlinksActive);
+  }
 
   /**
-   * Scrolls to an element with header offset
+   * Handle clicks outside nav menu to close it
    */
-  const scrollto = (el) => {
-    let elementPos = select(el).offsetTop;
-    window.scrollTo({
-      top: elementPos,
-      behavior: "smooth",
+  document.addEventListener('click', function(e) {
+    if (header.classList.contains('nav-active') && !header.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+      header.classList.remove('nav-active');
+      mobileNavToggle.classList.remove('bi-x');
+      body.classList.remove('mobile-nav-active');
+    }
+  });
+
+  /**
+   * Navbar links active state on scroll
+   */
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section');
+
+  function navHighlighter() {
+    let scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+      const sectionHeight = section.offsetHeight;
+      const sectionTop = section.offsetTop - 100;
+      const sectionId = section.getAttribute('id');
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + sectionId) {
+            link.classList.add('active');
+          }
+        });
+      }
     });
-  };
+  }
+
+  window.addEventListener('scroll', navHighlighter);
 
   /**
    * Back to top button
    */
-  let backtotop = select(".back-to-top");
-  if (backtotop) {
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
     const toggleBacktotop = () => {
       if (window.scrollY > 100) {
-        backtotop.classList.add("active");
+        backToTop.classList.add('active');
       } else {
-        backtotop.classList.remove("active");
+        backToTop.classList.remove('active');
       }
-    };
-    window.addEventListener("load", toggleBacktotop);
-    onscroll(document, toggleBacktotop);
+    }
+    window.addEventListener('load', toggleBacktotop);
+    window.addEventListener('scroll', toggleBacktotop);
   }
 
   /**
-   * Toggle navigation
+   * Typed.js integration
    */
-  const navToggle = document.querySelector('.mobile-nav-toggle');
-  const body = document.querySelector('body');
-  const header = document.querySelector('#header');
-  const main = document.querySelector('#main');
-  const hero = document.querySelector('#hero');
-
-  if (navToggle) {
-    navToggle.addEventListener('click', function(e) {
-      header.classList.toggle('nav-active');
-      main.classList.toggle('nav-active');
-      hero.classList.toggle('nav-active');
-      navToggle.querySelector('i').classList.toggle('bi-list');
-      navToggle.querySelector('i').classList.toggle('bi-x');
-    });
-  }
-
-  // Close nav menu when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!header.contains(e.target) && !navToggle.contains(e.target) && header.classList.contains('nav-active')) {
-      header.classList.remove('nav-active');
-      main.classList.remove('nav-active');
-      hero.classList.remove('nav-active');
-      navToggle.querySelector('i').classList.remove('bi-x');
-      navToggle.querySelector('i').classList.add('bi-list');
-    }
-  });
-
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on(
-    "click",
-    ".scrollto",
-    function (e) {
-      if (select(this.hash)) {
-        e.preventDefault();
-
-        let body = select("body");
-        if (body.classList.contains("mobile-nav-active")) {
-          body.classList.remove("mobile-nav-active");
-          let navbarToggle = select(".mobile-nav-toggle");
-          navbarToggle.classList.toggle("bi-list");
-          navbarToggle.classList.toggle("bi-x");
-        }
-        scrollto(this.hash);
-      }
-    },
-    true,
-  );
-
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener("load", () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash);
-      }
-    }
-  });
-
-  /**
-   * Hero type effect
-   */
-  const typed = document.querySelector('.typed')
+  const typed = document.querySelector('.typed');
   if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
+    let typed_strings = typed.getAttribute('data-typed-items');
+    typed_strings = typed_strings.split(',');
     new Typed('.typed', {
       strings: typed_strings,
       loop: true,
@@ -171,283 +124,202 @@
   }
 
   /**
-   * Skills animation
-   */
-  let skilsContent = select(".skills-content");
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: "80%",
-      handler: function (direction) {
-        let progress = select(".progress .progress-bar", true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute("aria-valuenow") + "%";
-        });
-      },
-    });
-  }
-
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener("load", () => {
-    let portfolioContainer = select(".portfolio-container");
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: ".portfolio-item",
-      });
-
-      let portfolioFilters = select("#portfolio-flters li", true);
-
-      on(
-        "click",
-        "#portfolio-flters li",
-        function (e) {
-          e.preventDefault();
-          portfolioFilters.forEach(function (el) {
-            el.classList.remove("filter-active");
-          });
-          this.classList.add("filter-active");
-
-          portfolioIsotope.arrange({
-            filter: this.getAttribute("data-filter"),
-          });
-          portfolioIsotope.on("arrangeComplete", function () {
-            AOS.refresh();
-          });
-        },
-        true,
-      );
-    }
-  });
-
-  /**
-   * Initiate portfolio lightbox
-   */
-  const portfolioLightbox = GLightbox({
-    selector: ".portfolio-lightbox",
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper(".portfolio-details-slider", {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-  });
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper(".testimonials-slider", {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: "auto",
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    },
-  });
-
-  /**
    * Animation on scroll
    */
-  window.addEventListener("load", () => {
+  window.addEventListener('load', () => {
     AOS.init({
       duration: 1000,
-      easing: "ease-in-out",
+      easing: 'ease-in-out',
       once: true,
-      mirror: false,
+      mirror: false
     });
-  });
-
-  // Add smooth scroll animation to all navigation links
-  document.querySelectorAll('a.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      if (this.hash !== "") {
-        e.preventDefault();
-        const hash = this.hash;
-        
-        window.scrollTo({
-          top: document.querySelector(hash).offsetTop - 70,
-          behavior: 'smooth'
-        });
-        
-        // Update URL hash
-        history.pushState(null, null, hash);
-      }
-    });
-  });
-
-  // Add animation to skill progress bars
-  function animateSkills() {
-    const skillsSection = document.querySelector('.skills');
-    if (!skillsSection) return;
-
-    const progressBars = skillsSection.querySelectorAll('.progress-bar');
-    
-    const animateProgress = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          progressBars.forEach(bar => {
-            const value = bar.getAttribute('aria-valuenow');
-            bar.style.width = value + '%';
-          });
-          observer.unobserve(entry.target);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(animateProgress, {
-      threshold: 0.5
-    });
-
-    observer.observe(skillsSection);
-  }
-
-  // Add fade-in animation to sections
-  function animateSections() {
-    const sections = document.querySelectorAll('section');
-    
-    const fadeIn = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(fadeIn, {
-      threshold: 0.1
-    });
-
-    sections.forEach(section => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(20px)';
-      section.style.transition = 'all 0.6s ease-out';
-      observer.observe(section);
-    });
-  }
-
-  // Initialize animations when DOM is loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    animateSkills();
-    animateSections();
   });
 
   /**
-   * Calculate and update age
+   * Calculate age
    */
-  function updateAge() {
-    const birthDate = new Date('2003-08-27'); // Your birth date
+  const ageElement = document.getElementById('age');
+  if (ageElement) {
+    const birthDate = new Date('2003-08-27');
     const today = new Date();
     let age = today.getFullYear() - birthDate.getFullYear();
-    const monthDiff = today.getMonth() - birthDate.getMonth();
-    
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
       age--;
     }
-    
-    document.getElementById('age').textContent = age + ' years';
+    ageElement.textContent = age;
   }
 
-  // Update age when page loads
-  document.addEventListener('DOMContentLoaded', updateAge);
-
-  // Update age every day at midnight
-  setInterval(() => {
-    const now = new Date();
-    if (now.getHours() === 0 && now.getMinutes() === 0 && now.getSeconds() === 0) {
-      updateAge();
-    }
-  }, 1000);
-
   /**
-   * PHP Email Form Validation - v3.6
+   * Portfolio video playback
    */
-  let forms = document.querySelectorAll('.php-email-form');
+  const portfolioVideoBtns = document.querySelectorAll('.portfolio-video-btn');
+  let currentlyPlaying = null;
 
-  forms.forEach( function(e) {
-    e.addEventListener('submit', function(event) {
-      event.preventDefault();
+  function resetVideoContainer(wrap) {
+    const video = wrap.querySelector('.portfolio-video');
+    const img = wrap.querySelector('img');
+    const links = wrap.querySelector('.portfolio-links');
+    
+    video.pause();
+    video.currentTime = 0;
+    video.classList.remove('active');
+    video.style.display = 'none';
+    img.style.display = 'block';
+    links.style.display = 'flex';
+    if (currentlyPlaying === video) {
+      currentlyPlaying = null;
+    }
+  }
 
-      let thisForm = this;
+  portfolioVideoBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const wrap = this.closest('.portfolio-wrap');
+      const video = wrap.querySelector('.portfolio-video');
+      const img = wrap.querySelector('img');
+      const links = wrap.querySelector('.portfolio-links');
 
-      let action = thisForm.getAttribute('action');
-      
-      if( ! action ) {
-        displayError(thisForm, 'The form action property is not set!');
-        return;
+      // If there's a video currently playing, stop it and reset its container
+      if (currentlyPlaying && currentlyPlaying !== video) {
+        const currentWrap = currentlyPlaying.closest('.portfolio-wrap');
+        resetVideoContainer(currentWrap);
       }
 
-      thisForm.querySelector('.loading').style.display = 'block';
-      thisForm.querySelector('.error-message').style.display = 'none';
-      thisForm.querySelector('.sent-message').style.display = 'none';
-
-      let formData = new FormData( thisForm );
-
-      php_email_form_submit(thisForm, action, formData);
+      // Toggle video playback
+      if (video.classList.contains('active')) {
+        resetVideoContainer(wrap);
+      } else {
+        video.classList.add('active');
+        video.style.display = 'block';
+        video.play();
+        img.style.display = 'none';
+        links.style.display = 'none';
+        currentlyPlaying = video;
+      }
     });
   });
 
-  function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
+  // Handle video events (end, pause, click)
+  document.querySelectorAll('.portfolio-video').forEach(video => {
+    video.addEventListener('ended', function() {
+      resetVideoContainer(this.closest('.portfolio-wrap'));
+    });
+
+    video.addEventListener('click', function() {
+      if (this.classList.contains('active')) {
+        resetVideoContainer(this.closest('.portfolio-wrap'));
+      }
+    });
+
+    // Remove the pause event listener since we're handling it with click
+  });
+
+  // Contact Form
+  document.querySelector('.php-email-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    let form = this;
+    let submitBtn = form.querySelector('button[type="submit"]');
+    let loadingDiv = form.querySelector('.loading');
+    let errorDiv = form.querySelector('.error-message');
+    let sentDiv = form.querySelector('.sent-message');
+    
+    // Show loading message
+    loadingDiv.style.display = 'block';
+    errorDiv.style.display = 'none';
+    sentDiv.style.display = 'none';
+    submitBtn.disabled = true;
+
+    let formData = new FormData(form);
+
+    fetch('forms/contact.php', {
       method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
+      body: formData
     })
     .then(response => {
-      if( response.ok ) {
+      if (response.ok) {
         return response.text();
-      } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
       }
+      throw new Error(response.statusText);
     })
     .then(data => {
-      thisForm.querySelector('.loading').style.display = 'none';
-      if (data.trim() == 'OK' || data.includes('Thank You')) {
-        thisForm.querySelector('.sent-message').style.display = 'block';
-        thisForm.reset(); 
-      } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-      }
+      loadingDiv.style.display = 'none';
+      sentDiv.style.display = 'block';
+      form.reset();
     })
-    .catch((error) => {
-      displayError(thisForm, error);
+    .catch(error => {
+      loadingDiv.style.display = 'none';
+      errorDiv.textContent = 'Message could not be sent. Please try again later.';
+      errorDiv.style.display = 'block';
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
     });
+  });
+
+  /**
+   * Portfolio hover effects with GIF and audio
+   */
+  document.querySelectorAll('.portfolio-wrap').forEach(wrap => {
+    const audio = wrap.querySelector('.hover-audio');
+    
+    if (audio) {
+      audio.volume = 0.2; // Set volume to 20%
+    }
+    
+    wrap.addEventListener('mouseenter', () => {
+      if (audio) {
+        audio.currentTime = 0; // Reset audio to start
+        audio.play();
+      }
+    });
+
+    wrap.addEventListener('mouseleave', () => {
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+  });
+
+  /**
+   * College Memories Slideshow
+   */
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.memories-slide');
+  const memoriesModal = new bootstrap.Modal(document.getElementById('memoriesModal'));
+
+  window.openSlideshow = function(index) {
+    currentSlide = index;
+    showSlide(currentSlide);
+    memoriesModal.show();
   }
 
-  function displayError(thisForm, error) {
-    thisForm.querySelector('.loading').style.display = 'none';
-    thisForm.querySelector('.error-message').innerHTML = error;
-    thisForm.querySelector('.error-message').style.display = 'block';
+  window.changeSlide = function(direction) {
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    showSlide(currentSlide);
   }
 
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  // Handle keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (document.getElementById('memoriesModal').classList.contains('show')) {
+      if (e.key === 'ArrowLeft') {
+        changeSlide(-1);
+      } else if (e.key === 'ArrowRight') {
+        changeSlide(1);
+      } else if (e.key === 'Escape') {
+        memoriesModal.hide();
+      }
+    }
+  });
+
+  // Reset slideshow when modal is closed
+  document.getElementById('memoriesModal').addEventListener('hidden.bs.modal', function() {
+    slides.forEach(slide => slide.classList.remove('active'));
+  });
 })();
