@@ -6,6 +6,97 @@
   "use strict";
 
   /**
+   * Loading Screen Handler
+   */
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    const loaderProgress = document.querySelector('.loader-progress');
+    const minimumLoadTime = 2500; // Increased to 2.5 seconds
+    const startTime = Date.now();
+    
+    // Initialize progress
+    let progress = 0;
+    const progressInterval = setInterval(() => {
+      progress = Math.min(progress + 1, 100);
+      loaderProgress.style.setProperty('--progress', progress + '%');
+      
+      if (progress === 100) {
+        clearInterval(progressInterval);
+      }
+    }, 20);
+    
+    // Ensure all images are loaded
+    const images = document.querySelectorAll('img');
+    let loadedImages = 0;
+    const totalImages = images.length;
+    
+    function updateProgress() {
+      const imageProgress = (loadedImages / totalImages) * 100;
+      progress = Math.max(progress, imageProgress);
+      loaderProgress.style.setProperty('--progress', progress + '%');
+    }
+    
+    function tryRemovePreloader() {
+      const currentTime = Date.now();
+      const elapsedTime = currentTime - startTime;
+      
+      if (loadedImages === totalImages && elapsedTime >= minimumLoadTime && progress >= 100) {
+        // Ensure progress is complete
+        loaderProgress.style.setProperty('--progress', '100%');
+        
+        // Add fade-out class
+        setTimeout(() => {
+          preloader.classList.add('fade-out');
+          
+          // Remove preloader after animation
+          setTimeout(() => {
+            preloader.style.display = 'none';
+            clearInterval(progressInterval);
+          }, 800);
+        }, 200);
+      } else if (loadedImages === totalImages) {
+        // Wait for minimum time if images loaded too quickly
+        setTimeout(tryRemovePreloader, minimumLoadTime - elapsedTime);
+      }
+    }
+    
+    // Count loaded images
+    images.forEach(img => {
+      if (img.complete) {
+        loadedImages++;
+        updateProgress();
+        tryRemovePreloader();
+      } else {
+        img.addEventListener('load', () => {
+          loadedImages++;
+          updateProgress();
+          tryRemovePreloader();
+        });
+        
+        img.addEventListener('error', () => {
+          loadedImages++;
+          updateProgress();
+          tryRemovePreloader();
+        });
+      }
+    });
+    
+    // Fallback: remove preloader after 8 seconds
+    setTimeout(() => {
+      if (preloader.style.display !== 'none') {
+        loaderProgress.style.setProperty('--progress', '100%');
+        setTimeout(() => {
+          preloader.classList.add('fade-out');
+          setTimeout(() => {
+            preloader.style.display = 'none';
+            clearInterval(progressInterval);
+          }, 800);
+        }, 200);
+      }
+    }, 8000);
+  });
+
+  /**
    * Easy selector helper function
    */
   const select = (el, all = false) => {

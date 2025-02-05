@@ -13,6 +13,177 @@
   --fast-transition: all 0.2s ease-in-out;
 }
 
+/* Loading Screen */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--navy);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-container {
+  text-align: center;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+/* Circular Progress */
+.loader-progress {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(var(--deep-green) var(--progress, 0%), transparent 0);
+  transition: --progress 1s ease;
+}
+
+.loader-progress::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: var(--navy);
+  top: 10px;
+  left: 10px;
+}
+
+/* Logo Container */
+.logo-container {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.loader-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 10px;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+/* Rotating Circles */
+.rotating-circles {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 0;
+  animation: rotate 8s linear infinite;
+}
+
+.circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--deep-green);
+  top: -10px;
+  left: 90px;
+}
+
+.circle:nth-child(2) {
+  transform: rotate(120deg);
+  background: var(--white);
+}
+
+.circle:nth-child(3) {
+  transform: rotate(240deg);
+  background: var(--light-gray);
+}
+
+.loading-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: -40px;
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  animation: fadeInOut 2s ease-in-out infinite;
+}
+
+.loading-text .dots {
+  display: inline-block;
+  animation: dotAnimation 1.4s infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(0.95);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 139, 34, 0.3),
+                inset 0 0 20px rgba(34, 139, 34, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(34, 139, 34, 0.5),
+                inset 0 0 40px rgba(34, 139, 34, 0.5);
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes dotAnimation {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
 /* General */
 body {
   font-family: "Open Sans", sans-serif;
@@ -307,6 +478,192 @@ a:hover {
   overflow: hidden;
 }
 
+/* College Logo and Memory Cards */
+.college-logo {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.college-logo img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: all 0.5s ease;
+  transform-origin: center;
+  padding: 10px;
+}
+
+.memory-cards {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.education-card .col-lg-5,
+.education-card .col-md-6 {
+  position: relative;
+  height: 200px;
+  margin-top: 20px;
+}
+
+.education-card:hover .college-logo {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+}
+
+.education-card:hover .memory-cards {
+  opacity: 1;
+  visibility: visible;
+  z-index: 3;
+}
+
+.memory-card {
+  position: absolute;
+  width: 140px;
+  height: 180px;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.memory-card:nth-child(1) {
+  transform: translateX(-140px) rotate(-15deg);
+}
+
+.memory-card:nth-child(2) {
+  transform: translateX(0) rotate(0deg);
+}
+
+.memory-card:nth-child(3) {
+  transform: translateX(140px) rotate(15deg);
+}
+
+.education-card:hover .memory-card:hover {
+  transform: translateY(-20px) scale(1.1) rotate(0deg);
+  z-index: 4;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.memory-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card-front {
+  background: linear-gradient(135deg, var(--deep-green), var(--navy));
+  border: 2px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: url('../img/Mahesh_Logo (2).png') center/contain no-repeat;
+  opacity: 0.2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memory-card::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--deep-green);
+  color: var(--white);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.memory-card:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+@media (max-width: 991px) {
+  .memory-cards {
+    height: 160px;
+  }
+
+  .memory-card {
+    width: 120px;
+    height: 160px;
+  }
+
+  .college-logo img {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .memory-cards {
+    height: 140px;
+  }
+
+  .memory-card {
+    width: 100px;
+    height: 140px;
+  }
+
+  .college-logo img {
+    max-width: 180px;
+  }
+}
+
+/* Rest of the education styles */
 .timeline {
   position: relative;
   padding: 40px 0;

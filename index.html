@@ -31,6 +31,22 @@
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div id="preloader">
+    <div class="loader-container">
+      <div class="loader-progress"></div>
+      <div class="rotating-circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+      <div class="logo-container">
+        <img src="assets/img/Mahesh_Logo (2).png" alt="Mahesh Logo" class="loader-logo">
+      </div>
+      <div class="loading-text">Loading<span class="dots">...</span></div>
+    </div>
+  </div>
+
   <!-- Mobile nav toggle button -->
   <button class="mobile-nav-toggle d-lg-none">
     <i class="bx bx-menu"></i>
@@ -154,15 +170,33 @@
                   </div>
                 </div>
                 <div class="col-lg-5 col-md-6">
-                  <div class="college-memories">
-                    <div class="memory-circle" data-tooltip="College Tech Event" onclick="openSlideshow(0)">
-                      <img src="assets/img/college/memory1.png" alt="College Memory">
+                  <div class="college-logo">
+                    <img src="assets/img/btech_bg.png" alt="BTech College Logo">
+                  </div>
+                  <div class="memory-cards">
+                    <div class="memory-card" data-tooltip="Graduation Ceremony Part - 2" onclick="openSlideshow(0)">
+                      <div class="card-inner">
+                        <div class="card-front"></div>
+                        <div class="card-back">
+                          <img src="assets/img/college/memory1.png" alt="Graduation Ceremony Part - 2">
+                        </div>
+                      </div>
                     </div>
-                    <div class="memory-circle" data-tooltip="Project Presentation" onclick="openSlideshow(1)">
-                      <img src="assets/img/college/memory2.jpg" alt="College Memory">
+                    <div class="memory-card" data-tooltip="Graduation Ceremony" onclick="openSlideshow(1)">
+                      <div class="card-inner">
+                        <div class="card-front"></div>
+                        <div class="card-back">
+                          <img src="assets/img/college/memory2.jpg" alt="Graduation Ceremony">
+                        </div>
+                      </div>
                     </div>
-                    <div class="memory-circle" data-tooltip="Hackathon Win" onclick="openSlideshow(2)">
-                      <img src="assets/img/college/memory3.png" alt="College Memory">
+                    <div class="memory-card" data-tooltip="My Trump Moment" onclick="openSlideshow(2)">
+                      <div class="card-inner">
+                        <div class="card-front"></div>
+                        <div class="card-back">
+                          <img src="assets/img/college/memory3.png" alt="My Trump Moment">
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
