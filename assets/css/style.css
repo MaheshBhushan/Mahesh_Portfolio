@@ -988,28 +988,128 @@ a:hover {
   padding: 27px;
   border-radius: 15px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
   text-align: center;
-  transition: var(--fast-transition);
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: none;
 }
 
 .skill-box:hover {
   transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .skill-box .skill-icon {
   margin-bottom: 20px;
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: var(--white);
+  box-shadow: 
+    -5px -5px 10px rgba(255, 255, 255, 0.8),
+    5px 5px 10px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+  transform: perspective(800px) rotateX(10deg) rotateY(10deg);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-box .skill-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5),
+    transparent 50%,
+    rgba(0, 0, 0, 0.05)
+  );
+  opacity: 0.5;
+  transition: all 0.4s ease;
+  transform: translateZ(-1px);
+}
+
+.skill-box:hover .skill-icon {
+  transform: perspective(800px) rotateX(15deg) rotateY(15deg) translateZ(20px) translateY(-5px);
+  box-shadow: 
+    -15px -15px 30px rgba(255, 255, 255, 0.8),
+    15px 15px 30px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .skill-box .skill-icon i {
-  font-size: 43px;
+  font-size: 42px;
   color: var(--deep-green);
+  transform: translateZ(30px);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-box:hover .skill-icon i {
+  transform: translateZ(50px);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+}
+
+/* Enhanced 3D Layer Effects */
+.skill-box .skill-icon::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.3),
+    transparent 40%,
+    rgba(255, 255, 255, 0.3) 60%,
+    rgba(255, 255, 255, 0.3)
+  );
+  opacity: 0;
+  transition: all 0.4s ease;
+  transform: translateZ(10px);
+}
+
+.skill-box:hover .skill-icon::after {
+  opacity: 1;
+}
+
+/* Bottom Shadow for Depth */
+.skill-box .skill-icon .bottom-shadow {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  filter: blur(20px);
+  opacity: 0;
+  transform: translateZ(-40px);
+  transition: all 0.4s ease;
+}
+
+.skill-box:hover .skill-icon .bottom-shadow {
+  opacity: 0.15;
 }
 
 .skill-box h3 {
   font-size: 18px;
   margin-bottom: 15px;
   color: var(--navy);
+  transition: all 0.3s ease;
+}
+
+.skill-box:hover h3 {
+  transform: scale(1.05);
+  color: var(--deep-green);
 }
 
 .skill-tags {
@@ -1017,20 +1117,52 @@ a:hover {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  margin-top: auto;
 }
 
 .skill-tag {
-  background: var(--light-gray);
-  color: var(--navy);
   padding: 5px 15px;
+  background: var(--light-gray);
   border-radius: 20px;
   font-size: 13px;
-  transition: var(--fast-transition);
+  color: var(--navy);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.skill-box:hover .skill-tag {
+.skill-tag:hover {
   background: var(--deep-green);
   color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(34, 139, 34, 0.4);
+  animation: tagWave 0.5s ease;
+}
+
+/* Animations */
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes tagWave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
 }
 
 /* Projects Section */
@@ -1040,31 +1172,80 @@ a:hover {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: var(--fast-transition);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   height: 100%;
   display: flex;
   flex-direction: column;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3),
+    transparent 50%,
+    rgba(255, 255, 255, 0.3)
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .project-card img {
   width: 100%;
   height: 225px;
   object-fit: cover;
-  transition: var(--fast-transition);
+  transition: all 0.5s ease;
+  transform-origin: center;
+  filter: brightness(0.95);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
 }
 
 .project-info {
-  padding: 23px;
+  padding: 28px;
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  transform-style: preserve-3d;
+  background: var(--white);
+}
+
+.project-info::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  transform: translateZ(-1px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project-card:hover .project-info::before {
+  opacity: 1;
 }
 
 .project-info h4 {
@@ -1074,6 +1255,12 @@ a:hover {
   color: var(--navy);
   position: relative;
   padding-bottom: 15px;
+  transform: translateZ(20px);
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-info h4 {
+  transform: translateZ(30px);
 }
 
 .project-info h4::after {
@@ -1084,11 +1271,12 @@ a:hover {
   height: 2px;
   width: 50px;
   background: var(--deep-green);
-  transition: var(--fast-transition);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .project-card:hover .project-info h4::after {
   width: 100px;
+  transform: scaleX(1.2);
 }
 
 .project-info p {
@@ -1096,6 +1284,12 @@ a:hover {
   color: #666;
   margin-bottom: 20px;
   line-height: 1.6;
+  transform: translateZ(10px);
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-info p {
+  transform: translateZ(20px);
 }
 
 .project-tech {
@@ -1104,6 +1298,7 @@ a:hover {
   gap: 8px;
   margin-bottom: auto;
   padding-bottom: 20px;
+  transform: translateZ(15px);
 }
 
 .tech-tag {
@@ -1112,55 +1307,102 @@ a:hover {
   border-radius: 15px;
   background: var(--light-gray);
   color: var(--navy);
-  transition: var(--fast-transition);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.project-card:hover .tech-tag {
-  background: var(--deep-green);
-  color: var(--white);
+.tech-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.project-card:hover .tech-tag::before {
+  left: 100%;
 }
 
 .project-links {
   display: flex;
   justify-content: center;
   margin-top: auto;
+  transform: translateZ(25px);
+  transition: transform 0.5s ease;
 }
 
 .project-links .btn {
   background: transparent;
   color: var(--navy);
   border: 2px solid var(--deep-green);
-  padding: 7px 23px;
+  padding: 8px 24px;
   border-radius: 25px;
   font-size: 14px;
   font-weight: 500;
-  transition: var(--fast-transition);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
+  overflow: hidden;
 }
 
-.project-links .btn i {
-  font-size: 18px;
+.project-links .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
 .project-links .btn:hover {
   background: var(--deep-green);
   color: var(--white);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-links .btn:hover::before {
+  left: 100%;
+}
+
+.project-links .btn i {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.project-links .btn:hover i {
+  transform: translateX(3px);
 }
 
 @media (max-width: 991px) {
-  .project-card img {
-    height: 220px;
+  .project-card {
+    transform: none;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
   }
   
   .project-info {
-    padding: 20px;
-  }
-  
-  .project-info h4 {
-    font-size: 20px;
+    padding: 24px;
   }
 }
 
@@ -1169,12 +1411,12 @@ a:hover {
     height: 200px;
   }
   
-  .project-info h4 {
-    font-size: 18px;
+  .project-info {
+    padding: 20px;
   }
   
-  .project-info p {
-    font-size: 14px;
+  .project-info h4 {
+    font-size: 18px;
   }
 }
 
