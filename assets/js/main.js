@@ -11,13 +11,23 @@
   window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     const loaderProgress = document.querySelector('.loader-progress');
-    const minimumLoadTime = 2500; // Increased to 2.5 seconds
+    const minimumLoadTime = 1500; // Reduced to 1.5 seconds for better UX
     const startTime = Date.now();
     
     // Initialize progress
     let progress = 0;
+    let imagesLoaded = false;
+    
+    // Create a more dynamic progress animation
     const progressInterval = setInterval(() => {
-      progress = Math.min(progress + 1, 100);
+      if (!imagesLoaded) {
+        // Slower progress until images are loaded
+        progress = Math.min(progress + 0.5, 85);
+      } else {
+        // Faster progress after images are loaded
+        progress = Math.min(progress + 5, 100);
+      }
+      
       loaderProgress.style.setProperty('--progress', progress + '%');
       
       if (progress === 100) {
@@ -25,26 +35,33 @@
       }
     }, 20);
     
-    // Ensure all images are loaded
+    // Load and track all images
     const images = document.querySelectorAll('img');
     let loadedImages = 0;
     const totalImages = images.length;
     
     function updateProgress() {
       const imageProgress = (loadedImages / totalImages) * 100;
-      progress = Math.max(progress, imageProgress);
-      loaderProgress.style.setProperty('--progress', progress + '%');
+      if (imageProgress > progress) {
+        progress = imageProgress;
+        loaderProgress.style.setProperty('--progress', progress + '%');
+      }
+      
+      if (loadedImages === totalImages) {
+        imagesLoaded = true;
+      }
     }
     
     function tryRemovePreloader() {
       const currentTime = Date.now();
       const elapsedTime = currentTime - startTime;
       
-      if (loadedImages === totalImages && elapsedTime >= minimumLoadTime && progress >= 100) {
-        // Ensure progress is complete
+      if (loadedImages === totalImages && elapsedTime >= minimumLoadTime) {
+        // Ensure progress is complete with a smooth animation
+        progress = 100;
         loaderProgress.style.setProperty('--progress', '100%');
         
-        // Add fade-out class
+        // Add fade-out class with a slight delay
         setTimeout(() => {
           preloader.classList.add('fade-out');
           
@@ -52,15 +69,15 @@
           setTimeout(() => {
             preloader.style.display = 'none';
             clearInterval(progressInterval);
-          }, 800);
-        }, 200);
+          }, 600);
+        }, 100);
       } else if (loadedImages === totalImages) {
         // Wait for minimum time if images loaded too quickly
-        setTimeout(tryRemovePreloader, minimumLoadTime - elapsedTime);
+        setTimeout(tryRemovePreloader, 100);
       }
     }
     
-    // Count loaded images
+    // Track image loading
     images.forEach(img => {
       if (img.complete) {
         loadedImages++;
@@ -81,19 +98,20 @@
       }
     });
     
-    // Fallback: remove preloader after 8 seconds
+    // Fallback: remove preloader after 5 seconds (reduced from 8)
     setTimeout(() => {
       if (preloader.style.display !== 'none') {
+        progress = 100;
         loaderProgress.style.setProperty('--progress', '100%');
         setTimeout(() => {
           preloader.classList.add('fade-out');
           setTimeout(() => {
             preloader.style.display = 'none';
             clearInterval(progressInterval);
-          }, 800);
-        }, 200);
+          }, 600);
+        }, 100);
       }
-    }, 8000);
+    }, 5000);
   });
 
   /**
