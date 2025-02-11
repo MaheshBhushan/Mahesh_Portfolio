@@ -18,14 +18,11 @@ section {
   position: relative;
   z-index: 2;
   background-color: var(--body-bg);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 section.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* Loading Screen */
@@ -268,14 +265,24 @@ a:hover {
 }
 
 .profile {
-  padding: 18px 0;
+  padding: 15px 0;
   text-align: center;
 }
 
 .profile img {
-  max-width: 108px;
-  border: 5px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 13px;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto 12px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.profile img:hover {
+  transform: scale(1.05);
+  border-color: var(--deep-green);
+  box-shadow: 0 0 20px rgba(34, 139, 34, 0.3);
 }
 
 .profile h1 {
@@ -415,17 +422,14 @@ a:hover {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") center center;
-  background-size: 90% auto;
+  background: url("../img/hero-bg.jpg") right center;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center 15%;
+  background-position: 85% center;
+  background-color: var(--navy);
   position: relative;
   padding: 0;
-  background-color: var(--navy);
-  transition: all 0.2s ease-out;
-  opacity: 1;
-  transform: none;
+  transition: all 0.4s ease-out;
 }
 
 /* Quick fade-in for hero content */
@@ -1458,7 +1462,7 @@ a:hover {
 
 /* Portfolio Section */
 .portfolio {
-  padding: 60px 0;
+  padding: 60px 0 30px;
   background: var(--light-gray);
 }
 
@@ -1476,6 +1480,7 @@ a:hover {
   border-radius: 10px;
   background: var(--white);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .portfolio .portfolio-wrap .static-img,
@@ -1632,6 +1637,12 @@ video {
 }
 
 /* Contact Section */
+.contact {
+  padding: 30px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
 .contact .info {
   padding: 27px;
   background: var(--white);
@@ -1714,25 +1725,51 @@ video {
   padding: 27px 0;
   margin-top: auto;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #footer .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 #footer .copyright {
   margin: 0;
   text-align: center;
+  width: 100%;
 }
 
 #footer .copyright strong {
   font-weight: 600;
+  display: inline-block;
+}
+
+/* Responsive footer adjustments */
+@media (max-width: 1200px) {
+  #footer .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 991px) {
+  #footer .container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  #footer .container {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 576px) {
+  #footer .container {
+    padding: 0 20px;
+  }
 }
 
 /* Back to top button */
@@ -1831,6 +1868,11 @@ video {
   #hero p {
     font-size: 20px;
   }
+
+  .profile img {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -1865,6 +1907,11 @@ video {
   .contact .info h4 {
     font-size: 18px;
   }
+
+  .profile img {
+    width: 75px;
+    height: 75px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1878,8 +1925,8 @@ video {
   }
 
   .profile img {
-    max-width: 100px;
-    border-width: 4px;
+    width: 70px;
+    height: 70px;
   }
 
   .profile h1 {
@@ -2309,38 +2356,59 @@ section {
 /* Enhanced Hero Section Responsive Styles */
 @media (max-width: 1400px) {
   #hero {
-    background-size: 95% auto;
+    background-position: 90% center;
   }
 }
 
 @media (max-width: 1199px) {
   #hero {
     background-attachment: scroll;
-    background-size: 90% auto;
+    background-position: 95% center;
+  }
+
+  #hero .hero-container {
+    padding-left: 40px;
   }
 }
 
 @media (max-width: 991px) {
   #hero {
-    background-size: 95% auto;
     text-align: center;
-    padding: 60px 0;
+    padding: 120px 0;
+    background-position: 100% center;
+    background-size: cover;
+  }
+
+  #hero .hero-container {
+    padding: 0 20px;
+    background: rgba(46, 64, 83, 0.8);
+    border-radius: 15px;
+    margin: 0 15px;
   }
 }
 
 @media (max-width: 767px) {
   #hero {
-    background-size: auto 85%;
-    background-position: center 20%;
     padding: 100px 0;
+    background-position: 85% center;
+    background-size: cover;
+  }
+
+  #hero .hero-container {
+    padding: 30px 20px;
   }
 }
 
 @media (max-width: 575px) {
   #hero {
-    background-size: auto 80%;
     height: 100vh;
     padding: 80px 0;
+    background-position: 80% center;
+    background-size: cover;
+  }
+
+  #hero .hero-container {
+    padding: 25px 15px;
   }
 }
 
@@ -2350,4 +2418,36 @@ section {
     height: -webkit-fill-available;
     background-attachment: scroll;
   }
+}
+
+/* Portfolio Audio States */
+.portfolio-wrap {
+  cursor: pointer;
+  position: relative;
+}
+
+.portfolio-wrap::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>');
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.portfolio-wrap.audio-playing::after {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>');
+}
+
+.portfolio-wrap:hover::after {
+  opacity: 1;
 }
