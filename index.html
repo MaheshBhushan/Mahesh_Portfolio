@@ -9,6 +9,9 @@
   <meta content="Portfolio showcasing the skills of Mahesh Koduri as an AI Engineer, Data Scientist, and ML Engineer" name="description">
   <meta content="AI Engineer, Data Scientist, ML Engineer, TensorFlow, Python, Data Analysis, Web Development, Cloud Computing" name="keywords">
 
+  <!-- Preload Hero Background -->
+  <link rel="preload" as="image" href="assets/img/hero-bg.jpg" type="image/jpeg">
+
   <!-- Favicon -->
   <link href="assets/img/Mahesh_Logo (2).png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -27,25 +30,35 @@
 
   <!-- Dark Mode CSS -->
   <link href="assets/css/dark-mode.css" rel="stylesheet">
+  
+  <!-- Initial Styles -->
+  <style>
+    #hero {
+      background-color: #040404; /* Dark background color to match theme */
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('assets/img/hero-bg.jpg') center center/cover;
+      opacity: 0;
+      transition: opacity 0.5s ease-in;
+    }
+    #hero.loaded::before {
+      opacity: 1;
+    }
+    /* Ensure hero content stays above the background */
+    #hero .hero-container {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Loading Screen -->
-  <div id="preloader">
-    <div class="loader-container">
-      <div class="loader-progress"></div>
-      <div class="rotating-circles">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-      </div>
-      <div class="logo-container">
-        <img src="assets/img/Mahesh_Logo (2).png" alt="Mahesh Logo" class="loader-logo">
-      </div>
-      <div class="loading-text">Loading<span class="dots">...</span></div>
-    </div>
-  </div>
-
   <!-- Mobile nav toggle button -->
   <button class="mobile-nav-toggle d-lg-none">
     <i class="bx bx-menu"></i>
@@ -579,9 +592,24 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   
-  <!-- Preloader -->
-  <script src="assets/js/preloader.js"></script>
-  
+  <!-- Hero Loading Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroSection = document.getElementById('hero');
+      const img = new Image();
+      img.src = 'assets/img/hero-bg.jpg';
+      
+      img.onload = function() {
+        heroSection.classList.add('loaded');
+      };
+      
+      // Fallback if image is cached
+      if (img.complete) {
+        heroSection.classList.add('loaded');
+      }
+    });
+  </script>
+
   <!-- Scroll Animations -->
   <script src="assets/js/scroll-animations.js"></script>
   
