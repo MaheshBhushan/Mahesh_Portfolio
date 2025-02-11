@@ -34,26 +34,8 @@
   <!-- Initial Styles -->
   <style>
     #hero {
-      background-color: #040404; /* Dark background color to match theme */
-    }
-    #hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('assets/img/hero-bg.jpg') center center/cover;
       opacity: 0;
-      transition: opacity 0.5s ease-in;
-    }
-    #hero.loaded::before {
-      opacity: 1;
-    }
-    /* Ensure hero content stays above the background */
-    #hero .hero-container {
-      position: relative;
-      z-index: 1;
+      background-color: #040404;
     }
   </style>
 </head>
@@ -600,12 +582,12 @@
       img.src = 'assets/img/hero-bg.jpg';
       
       img.onload = function() {
-        heroSection.classList.add('loaded');
+        heroSection.style.opacity = '1';
       };
       
       // Fallback if image is cached
       if (img.complete) {
-        heroSection.classList.add('loaded');
+        heroSection.style.opacity = '1';
       }
     });
   </script>
