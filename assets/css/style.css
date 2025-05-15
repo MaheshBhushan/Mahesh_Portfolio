@@ -756,6 +756,31 @@ a:hover {
   padding: 0;
 }
 
+/* DIT logo styling for master's education card - bigger size */
+.education-card:nth-child(1) .college-icon img {
+  max-width: 280px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+/* DIT logo styling for master's education card - maximized size */
+.education-card:nth-child(1) .college-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+}
+
+.education-card:nth-child(1) .college-icon img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  padding: 20px;
+  margin: 0;
+  object-fit: contain;
+}
+
 .education-card:hover .college-icon img {
   transform: scale(1.05);
   opacity: 1;
